@@ -1,0 +1,5 @@
+{
+  "containerd_version": "2.0.2",
+  "containerd_sha256": "9bd5b6a1bdf505d520d9a329c520258ed0a17faa9fe3db12712ee858ad59aae3",
+  "containerd_sha256_windows": "c8f6ee6d13368cbabcf13e742161df7bc2675a00850d65d29d4e2384999f1672"
+}
