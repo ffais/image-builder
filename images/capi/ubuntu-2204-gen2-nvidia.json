@@ -1,7 +1,8 @@
 {
-  "ansible_user_vars": "gpu_vendor=nvidia nvidia_s3_url=https://minio-api.tenant1.digitalhub-dev.smartcommunitylab.it nvidia_bucket=nvidia-drivers nvidia_bucket_access=image-builder nvidia_bucket_secret=image-builder nvidia_installer_location=NVIDIA-Linux-x86_64-550.127.08.run",
+  "ansible_user_vars": "gpu_vendor=nvidia nvidia_s3_url=https://minio-api.tenant1.digitalhub-dev.smartcommunitylab.it nvidia_bucket=nvidia-drivers nvidia_bucket_access=image-builder nvidia_bucket_secret=image-builder nvidia_installer_location=NVIDIA-Linux-x86_64-570.86.15.run",
   "node_custom_roles_pre": "gpu",
-  "containerd_version": "1.7.25",
-  "containerd_sha256": "02990fa281c0a2c4b073c6d2415d264b682bd693aa7d86c5d8eb4b86d684a18c",
-  "containerd_sha256_windows": "79aa756c70caf511853cafd2e983add2e391251be9d88bf3be22e2ea49e3edc5"
+  "containerd_version": "2.0.2",
+  "containerd_sha256": "9bd5b6a1bdf505d520d9a329c520258ed0a17faa9fe3db12712ee858ad59aae3",
+  "containerd_sha256_windows": "c8f6ee6d13368cbabcf13e742161df7bc2675a00850d65d29d4e2384999f1672",
+  "image_name": "capi-ubuntu-2204-gen2-nvidia"
 }
