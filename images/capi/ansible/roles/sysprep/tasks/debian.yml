@@ -109,10 +109,10 @@
     enabled: false
   when: "'unattended-upgrades' in ansible_facts.packages"
 
-- name: Reset network interface IDs
-  ansible.builtin.file:
-    state: absent
-    path: /etc/udev/rules.d/70-persistent-net.rules
+# - name: Reset network interface IDs
+#   ansible.builtin.file:
+#     state: absent
+#     path: /etc/udev/rules.d/70-persistent-net.rules
 
 - name: Determine if update-grub is present
   ansible.builtin.stat:
@@ -132,32 +132,32 @@
     - _stat_update_grub.stat.exists
     - sysprep_require_grub_file|default(true)|bool
 
-- name: Removing subiquity disable cloud-init networking config
-  ansible.builtin.file:
-    path: /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
-    state: absent
-  when: ansible_distribution_version is version('22.04', '>=')
+# - name: Removing subiquity disable cloud-init networking config
+#   ansible.builtin.file:
+#     path: /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
+#     state: absent
+#   when: ansible_distribution_version is version('22.04', '>=')
 
-- name: Removing 99-installer.cfg which sets the cloud-init datasource to None
-  ansible.builtin.file:
-    path: /etc/cloud/cloud.cfg.d/99-installer.cfg
-    state: absent
-  when: ansible_distribution_version is version('22.04', '>=')
+# - name: Removing 99-installer.cfg which sets the cloud-init datasource to None
+#   ansible.builtin.file:
+#     path: /etc/cloud/cloud.cfg.d/99-installer.cfg
+#     state: absent
+#   when: ansible_distribution_version is version('22.04', '>=')
 
-- name: Removing subiquity curtin preserve sources config
-  ansible.builtin.file:
-    path: /etc/cloud/cloud.cfg.d/curtin-preserve-sources.cfg
-    state: absent
-  when: ansible_distribution_version is version('22.04', '>=')
+# - name: Removing subiquity curtin preserve sources config
+#   ansible.builtin.file:
+#     path: /etc/cloud/cloud.cfg.d/curtin-preserve-sources.cfg
+#     state: absent
+#   when: ansible_distribution_version is version('22.04', '>=')
 
-- name: Removing cloud-init ds identify config
-  ansible.builtin.file:
-    path: /etc/cloud/ds-identify.cfg
-    state: absent
-  when: ansible_distribution_version is version('22.04', '>=')
+# - name: Removing cloud-init ds identify config
+#   ansible.builtin.file:
+#     path: /etc/cloud/ds-identify.cfg
+#     state: absent
+#   when: ansible_distribution_version is version('22.04', '>=')
 
-- name: Removing 90-installer-network.cfg installer network configuration
-  ansible.builtin.file:
-    path: /etc/cloud/cloud.cfg.d/90-installer-network.cfg
-    state: absent
-  when: ansible_distribution_version is version('22.04', '>=')
+# - name: Removing 90-installer-network.cfg installer network configuration
+#   ansible.builtin.file:
+#     path: /etc/cloud/cloud.cfg.d/90-installer-network.cfg
+#     state: absent
+#   when: ansible_distribution_version is version('22.04', '>=')
